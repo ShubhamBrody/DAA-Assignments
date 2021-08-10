@@ -8,20 +8,22 @@ int main()
     while (t--)
     {
         int n, k;
-        cin >> n >> k;
+        cin >> n;
         int a[1000];
         for (int i = 0; i < n; i++)
             cin >> a[i];
+        cin >> k;
         int l = 0, r = n - 1;
         int loops = 0;
         bool found = false;
         while (l <= r)
         {
             loops++;
-            int mid = (l + r) / 2;
+            int mid = (r + l) / 2;
             if (a[mid] == k)
             {
                 found = true;
+                break;
             }
             else if (a[mid] < k)
                 l = mid + 1;
